@@ -1,0 +1,10 @@
+//Ressources: Wood, Brick, Stone, Ore, Loom, Glass, Press
+//Composed Ressources: Wood/Brick, Wood/Stone etc.
+//Commercial Ressources (Can not be traded)
+Res:['W','B','S','O','L','G','P','WB','WS','WO','BS','BO','SO','WBSO','LGP']
+
+//Science: Tablet, Compass, Gear
+Science:['T','C','G']
+
+//Cards: Commercial, Science, Military, Wonder, Basic Ressource, Advanced Ressource, Guild
+CardCategory:['C','S','M','W','B','A','G']
