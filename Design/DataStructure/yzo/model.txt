@@ -1,0 +1,52 @@
+Resource : ['W','B','S','O','L','G','P','WB','WS','WO','BS','BO','SO','WBSO','LGP']
+Science : ['T','C','G', 'TCG']
+
+Player
+- id : Integer
+- name : String
+- wonder : Wonder
+- money : Integer
+- resources : List<Resource>
+- tradeableResources : List<Resource>
+- leftPlayer : Player
+- rightPlayer : Player
+- currentCards : List<Card>
+- ownedCards : List<Card>
+- militaryUnits : Integer
+- militaryTokens : List<MilitaryTokens>
+- sciences : List<Science>
+- accomplishedStages : List<Stage>
+- penalty : Integer
+
+Wonder
+- id : Integer
+- name : String
+- side : 'A'|'B'
+- resourceGain : Resource
+- moneyGain : Integer
+- stages : List<Stage>
+- specialEffect: Effect
+
+Stage:
+- resourceCost : List<Resource>
+- moneyCost : Integer
+- resourceGain : Resource
+- moneyGain : Integer
+- science : Science
+- victoryPoints : Integer
+- militaryUnits : Integer
+- specialEffect : Effect
+
+Card extend Stage
+- id : Integer
+- name : String
+- type : String
+- age : Integer
+- playerRequired : Integer
+- upgradeFrom : Card
+
+MilitaryTokens
+- positive : Boolean
+- points : Integer
+
+
