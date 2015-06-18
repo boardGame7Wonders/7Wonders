@@ -12,5 +12,7 @@ package com.boardgame.sevenwonders.model;
 public enum Direction {
     LEFT,
     SELF,
-    RIGHT
+    RIGHT,
+	NEIGHBORS, //LEFT + RIGHT
+	ALL //LEFT + SELF + RIGHT
 }

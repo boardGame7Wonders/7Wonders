@@ -68,9 +68,16 @@ public class Player {
             return true;
         }
 	
-        private void constructCard(Card iCard) {
-                handCards.remove(iCard);
-		constructedCards.get(iCard.getCategory()).add(iCard);
+		//iCard is the card to be constructed
+		//iCostCard is the card to be removed from handCards
+        private void constructCard(Card iCard, Card iCostCard) {
+			
+                handCards.remove(iCostCard);
+				
+				if(iCard.getCategory() == CardCategory.WONDER) {
+					wonder.getWonderStages.remove(iCard);
+				}
+				constructedCards.get(iCard.getCategory()).add(iCard);
                 
                 //mark the cards which can be constructed from upgrade later
                 if(iCard.getUpgradeToId() != null) {
@@ -81,6 +88,10 @@ public class Player {
                 
                 //Todo: apply post-construction effect of the card
         }
+		
+		private void constructCard(Card iCard) {
+			constructCard(iCard, iCard);
+		}
         
 	//iCard: the Card to be constructed
 	//iResAllocPlan, the trade direction of each resource needed to construct iCard
@@ -104,8 +115,8 @@ public class Player {
         
         public boolean upgradeCard(Card iCard) {
             	if(!constructedCards.get(iCard.getCategory()).contains(iCard)) {
-			//Can not construct twice the same card
-			return false;
+				//Can not construct twice the same card
+				return false;
 		}
                 
                 if(!upgradableCards.contains(iCard.getId())) {                  	
@@ -122,7 +133,7 @@ public class Player {
 		gold = gold + 3;
 	}
 	
-	public boolean upgradeWonder(Card iCard, Direction[] iResAllocPlan) {
+	public boolean upgradeWonder(Card iCostCard, Direction[] iResAllocPlan) {
 		if(wonder.getWonderStages().isEmpty()) {
 			//no more wonder stage available to construct
 			return false;
@@ -137,8 +148,8 @@ public class Player {
 			return false;
 		}
                 
-		constructCard(wonderCard);   
-                return true;
+		constructCard(wonderCard, iCostCard);   
+        return true;
 	}
         
         private void fightWith(Player iPlayer) {
