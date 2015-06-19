@@ -56,43 +56,6 @@ public class Player {
 	
 	private boolean freeConstructionEachAge;
         
-        private boolean validateResAllocPlan(Card iCard, Direction[] iResAllocPlan) {        
-            if(iCard.getResCost().length != iResAllocPlan.length) {
-                //Card resource cost and resource allocation plan should have the same size,
-                //this is a 1 to 1 mapping
-                return false;
-            }
-            
-            //Todo: implement the algo
-            
-            return true;
-        }
-	
-		//iCard is the card to be constructed
-		//iCostCard is the card to be removed from handCards
-        private void constructCard(Card iCard, Card iCostCard) {
-			
-                handCards.remove(iCostCard);
-				
-				if(iCard.getCategory() == CardCategory.WONDER) {
-					wonder.getWonderStages.remove(iCard);
-				}
-				constructedCards.get(iCard.getCategory()).add(iCard);
-                
-                //mark the cards which can be constructed from upgrade later
-                if(iCard.getUpgradeToId() != null) {
-                    for(int cardId : iCard.getUpgradeToId()) {
-                        upgradableCards.add(cardId);
-                    }
-                }
-                
-                //Todo: apply post-construction effect of the card
-        }
-		
-		private void constructCard(Card iCard) {
-			constructCard(iCard, iCard);
-		}
-        
 	//iCard: the Card to be constructed
 	//iResAllocPlan, the trade direction of each resource needed to construct iCard
 	public boolean playCard(Card iCard, Direction[] iResAllocPlan) {
@@ -152,7 +115,52 @@ public class Player {
         return true;
 	}
         
-        private void fightWith(Player iPlayer) {
+        public void conflict() {
+            //Todo check if neighbors have diplomate tokens for Cities expansion
+            fightWith(neighborLeft);
+            fightWith(neighborRight);
+        }
+		
+	        private boolean validateResAllocPlan(Card iCard, Direction[] iResAllocPlan) {        
+            if(iCard.getResCost().length != iResAllocPlan.length) {
+                //Card resource cost and resource allocation plan should have the same size,
+                //this is a 1 to 1 mapping
+                return false;
+            }
+            
+            //Todo: implement the algo
+            
+            return true;
+        }
+	
+		//iCard is the card to be constructed
+		//iCostCard is the card to be removed from handCards
+        private void constructCard(Card iCard, Card iCostCard) {
+			
+                handCards.remove(iCostCard);
+				
+				if(iCard.getCategory() == CardCategory.WONDER) {
+					wonder.getWonderStages.remove(iCard);
+				}
+				constructedCards.get(iCard.getCategory()).add(iCard);
+                
+                //mark the cards which can be constructed from upgrade later
+                if(iCard.getUpgradeToId() != null) {
+                    for(int cardId : iCard.getUpgradeToId()) {
+                        upgradableCards.add(cardId);
+                    }
+                }
+
+				for(Effect aEffect:iCard.getEffectOnPlay()) {
+					aEffect.trigger(this);
+				}
+        }
+		
+		private void constructCard(Card iCard) {
+			constructCard(iCard, iCard);
+		}
+		
+		private void fightWith(Player iPlayer) {
             if(militaryStr > iPlayer.getMilitaryStr()) {
                 switch(gameBoard.getCurrentAge()){
                     case 1 : militaryTokens.add(1);
@@ -168,9 +176,4 @@ public class Player {
             }
         }
         
-        public void conflict() {
-            //Todo check if neighbors have diplomate tokens for Cities expansion
-            fightWith(neighborLeft);
-            fightWith(neighborRight);
-        }
 }

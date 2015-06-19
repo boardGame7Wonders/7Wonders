@@ -10,59 +10,40 @@ import lombok.AllArgsConstructor;
  */
 public class ElemCounter {
 	
-	private CountType type;
-	
-	private CardCategory countCategory;
-	
-	private Direction countDirection;
-	
-	public int getResult(Player iPlayer) {
-		switch(type) {
-			case CountType.COUNTCARD:       return countCards(iPlayer);
-			case CountType.COUNTWINTOKEN:   return countMilitaryWinTokens(iPlayer);
-			case CountType.COUNTLOOSETOKEN: return countMilitaryLooseTokens(Player iPlayer);
-			case default:                   return 0;
-		}
-	}
-	
-	private int countCards(Player iPlayer) {
+	public static int CountCards(Player iPlayer, Direction iCountOnDirection, CardCategory[] iCountOnCategories) {
 		
 		int cardNum = 0;
 		
-		switch(countDirection) {
-			case SELF:		cardNum = iPlayer.getConstructedCards().get(countCategory).size();
-							break;
-			case NEIGHBORS: cardNum = iPlayer.getNeighborLeft().getConstructedCards().get(countCategory).size() +
-									  iPlayer.getNeighborRight().getConstructedCards().get(countCategory).size();
-							break;
-			case ALL: 		cardNum = iPlayer.getConstructedCards().get(countCategory).size() +
-							          iPlayer.getNeighborLeft().getConstructedCards().get(countCategory).size() +
-							          iPlayer.getNeighborRight().getConstructedCards().get(countCategory).size();
-							break;
-			case LEFT:
-			case RIGHT:		//LEFT and RIGHT are not accepted as Direction here! An error or an exception should be returned
-			case default:	break;
+		for(CardCategory countOnCategory:iCountOnCategories) {
+			
+			switch(iCountOnDirection) {
+				case SELF:		cardNum += iPlayer.getConstructedCards().get(countOnCategory).size();
+								break;
+				case NEIGHBORS: cardNum += iPlayer.getNeighborLeft().getConstructedCards().get(countOnCategory).size() +
+										  iPlayer.getNeighborRight().getConstructedCards().get(iCountOnCategory).size();
+								break;
+				case ALL: 		cardNum += iPlayer.getConstructedCards().get(iCountOnCategory).size() +
+										  iPlayer.getNeighborLeft().getConstructedCards().get(iCountOnCategory).size() +
+										  iPlayer.getNeighborRight().getConstructedCards().get(iCountOnCategory).size();
+								break;
+				case LEFT:
+				case RIGHT:		//LEFT and RIGHT are not accepted as Direction here! An error or an exception should be returned
+				case default:	break;
+			}
+			
 		}
 		
 		return cardNum;
 	}
 	
-	private int countMilitaryWinTokens(Player iPlayer) {
-		return countMilitaryTokens(iPlayer, true);
-	}
-	
-	private int countMilitaryLooseTokens(Player iPlayer) {
-		return countMilitaryTokens(iPlayer, false);
-	}
-	
-	private int countMilitaryTokens(Player iPlayer, boolean isWin) {
+	public static int countMilitaryTokens(Player iPlayer, Direction iCountOnDirection, boolean isWin) {
 		
 		int tokenNum = 0;
 		
 		//If isWin, count all winning(positive value) tokens, else count all loosing(negative value) tokens
 		int calCoeff = isWin ? 1 : -1;
 		
-		switch(countDirection) {
+		switch(iCountOnDirection) {
 			case SELF: 		for(int tokenValue : iPlayer.getMilitaryTokens()) {
 								tokenNum += (((tokenValue*calCoeff) > 0) ? 1 : 0) 
 							}

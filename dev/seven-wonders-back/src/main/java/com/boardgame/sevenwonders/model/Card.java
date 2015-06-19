@@ -26,9 +26,9 @@ public class Card {
         //Id of the cards to which this card can be upgraded
         private int[] upgradeToId;
         
-        //effect when the card is played
-        //private Effect effectOnPlay;
+        //effects when the card is played, Ex. Rhode's wonder stage can provide both golds and military strength.
+        private Effect[] effectOnPlay;
         
-        //victory points the card gives(calculted)
-        //private VictoryPoints vps;
+        //victory points the card gives(calculated)
+        private Effect vps;
 }
