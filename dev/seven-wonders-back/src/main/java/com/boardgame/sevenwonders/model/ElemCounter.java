@@ -20,15 +20,15 @@ public class ElemCounter {
 				case SELF:		cardNum += iPlayer.getConstructedCards().get(countOnCategory).size();
 								break;
 				case NEIGHBORS: cardNum += iPlayer.getNeighborLeft().getConstructedCards().get(countOnCategory).size() +
-										  iPlayer.getNeighborRight().getConstructedCards().get(iCountOnCategory).size();
+										  iPlayer.getNeighborRight().getConstructedCards().get(countOnCategory).size();
 								break;
-				case ALL: 		cardNum += iPlayer.getConstructedCards().get(iCountOnCategory).size() +
-										  iPlayer.getNeighborLeft().getConstructedCards().get(iCountOnCategory).size() +
-										  iPlayer.getNeighborRight().getConstructedCards().get(iCountOnCategory).size();
+				case ALL: 		cardNum += iPlayer.getConstructedCards().get(countOnCategory).size() +
+										  iPlayer.getNeighborLeft().getConstructedCards().get(countOnCategory).size() +
+										  iPlayer.getNeighborRight().getConstructedCards().get(countOnCategory).size();
 								break;
 				case LEFT:
 				case RIGHT:		//LEFT and RIGHT are not accepted as Direction here! An error or an exception should be returned
-				case default:	break;
+				default:	break;
 			}
 			
 		}
@@ -36,7 +36,7 @@ public class ElemCounter {
 		return cardNum;
 	}
 	
-	public static int countMilitaryTokens(Player iPlayer, Direction iCountOnDirection, boolean isWin) {
+	public static int CountMilitaryTokens(Player iPlayer, Direction iCountOnDirection, boolean isWin) {
 		
 		int tokenNum = 0;
 		
@@ -45,20 +45,20 @@ public class ElemCounter {
 		
 		switch(iCountOnDirection) {
 			case SELF: 		for(int tokenValue : iPlayer.getMilitaryTokens()) {
-								tokenNum += (((tokenValue*calCoeff) > 0) ? 1 : 0) 
+								tokenNum += (((tokenValue*calCoeff) > 0) ? 1 : 0);
 							}
 							break;
 			case NEIGHBORS: for(int tokenValue : iPlayer.getNeighborLeft().getMilitaryTokens()) {
-								tokenNum += (((tokenValue*calCoeff) > 0) ? 1 : 0) 
+								tokenNum += (((tokenValue*calCoeff) > 0) ? 1 : 0);
 							}
 							for(int tokenValue : iPlayer.getNeighborRight().getMilitaryTokens()) {
-								tokenNum += (((tokenValue*calCoeff) > 0) ? 1 : 0) 
+								tokenNum += (((tokenValue*calCoeff) > 0) ? 1 : 0); 
 							}
 							break;
 			case LEFT:
 			case RIGHT:
 			case ALL:		//Not accepted!
-			case default:	break;
+			default:	break;
 		}
 		
 		return tokenNum;

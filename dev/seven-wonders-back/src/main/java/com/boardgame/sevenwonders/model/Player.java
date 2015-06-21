@@ -140,7 +140,7 @@ public class Player {
                 handCards.remove(iCostCard);
 				
 				if(iCard.getCategory() == CardCategory.WONDER) {
-					wonder.getWonderStages.remove(iCard);
+					wonder.getWonderStages().remove(iCard);
 				}
 				constructedCards.get(iCard.getCategory()).add(iCard);
                 
