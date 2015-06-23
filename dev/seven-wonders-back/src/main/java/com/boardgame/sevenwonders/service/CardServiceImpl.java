@@ -21,7 +21,7 @@ public class CardServiceImpl implements CardService, InitializingBean {
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		ClassPathXmlApplicationContext context;
-		context = new ClassPathXmlApplicationContext("Cards.xml");
+		context = new ClassPathXmlApplicationContext("Rules.xml");
 		
 		CardCollection cardCol = (CardCollection) context
 				.getBean("CardCollection");
