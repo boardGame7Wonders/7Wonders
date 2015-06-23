@@ -16,5 +16,7 @@ public class Player {
 	private String name;
 	
 	private List<String> resources;
+	
+	private int gold;
 
 }

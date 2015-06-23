@@ -40,5 +40,15 @@ public class CardServiceImpl implements CardService, InitializingBean {
 		// TODO implements card selection and shuffling
 		return getAllCards();
 	}
+	
+	@Override
+	public Card getCardByID(int cardID){
+		for(Card card: cardList){
+			if(card.getId() == cardID){
+				return card;
+			}
+		}
+		return new Card();
+	}
 
 }

@@ -9,4 +9,7 @@ public interface CardService {
 	
 	public List<Card> getCardsForNPlayer(int nbPlayner);
 	
+	public Card getCardByID(int cardID);
+	
+	
 }

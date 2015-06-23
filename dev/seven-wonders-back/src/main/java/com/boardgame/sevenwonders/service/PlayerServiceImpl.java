@@ -8,6 +8,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Service;
 
 import com.boardgame.sevenwonders.model.Card;
+import com.boardgame.sevenwonders.model.CardEffect;
 import com.boardgame.sevenwonders.model.Player;
 
 @Service
@@ -19,11 +20,9 @@ public class PlayerServiceImpl implements PlayerService, InitializingBean {
 	public void afterPropertiesSet() throws Exception {
 		// init players
 		players = new ArrayList<>();
-		Player player1 = new Player(0, "Player A", new ArrayList<String>());
-		player1.getResources().add("S");
+		Player player1 = new Player(0, "Player A", new ArrayList<String>(), 1);
 		players.add(player1);
-		Player player2 = new Player(1, "Player B", new ArrayList<String>());
-		player2.getResources().add("W");
+		Player player2 = new Player(1, "Player B", new ArrayList<String>(), 3);
 		players.add(player2);
 	}
 
@@ -42,8 +41,9 @@ public class PlayerServiceImpl implements PlayerService, InitializingBean {
 		Player player = findById(playerId);
 
 		if (null != player) {
-			// apply rules, not implemented
-			player.getResources().add("W");
+			for(CardEffect cardEffect: card.getEffects()){
+				EffectMechanism.applyEffectToPlayer(player, cardEffect);
+			}
 		}
 
 		return player;

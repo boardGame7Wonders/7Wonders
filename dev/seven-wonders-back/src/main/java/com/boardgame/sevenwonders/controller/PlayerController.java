@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.boardgame.sevenwonders.model.Card;
 import com.boardgame.sevenwonders.model.Player;
+import com.boardgame.sevenwonders.service.CardService;
 import com.boardgame.sevenwonders.service.PlayerService;
 
 @RestController
@@ -21,6 +22,9 @@ public class PlayerController {
 
 	@Resource
 	PlayerService playerService;
+	
+	@Resource
+	CardService cardService;
 
 	@RequestMapping(value = "/{playerId}", method = RequestMethod.GET)
 	public ResponseEntity<Player> getPlayer(@PathVariable Integer playerId) {
@@ -38,8 +42,9 @@ public class PlayerController {
 
 	@RequestMapping(value = "/{playerId}/play", method = RequestMethod.POST)
 	public ResponseEntity<Player> playCard(@PathVariable Integer playerId,
-			@RequestBody Card card) {
+			@RequestBody Integer cardId) {
 		try {
+			Card card = cardService.getCardByID(cardId.intValue());
 			Player player = playerService.playCard(playerId, card);
 			if (null == player) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
