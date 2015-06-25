@@ -5,8 +5,10 @@ import com.boardgame.sevenwonders.model.Player;
 
 public interface PlayerService {
 	
-	Player findById(int playerId);
+	Player findByLogin(String login);
 	
-	Player playCard(int playerId, Card card);
+	void newPlayer(String login);
+	
+	Player playCard(String login, Card card);
 
 }

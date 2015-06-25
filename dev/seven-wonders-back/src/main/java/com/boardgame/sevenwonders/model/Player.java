@@ -11,10 +11,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Player {
 	
-	private int id;
+	private String login;
 	
 	private String name;
 	
 	private List<String> resources;
 
+	public Player(String login) {
+		super();
+		this.login = login;
+	}
+	
 }

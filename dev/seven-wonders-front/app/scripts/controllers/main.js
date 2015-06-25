@@ -27,7 +27,7 @@ angular.module('sevenWondersFrontApp')
     };
 
     $scope.getPlayer = function() {
-    	$http.get('/api/rest/player/0')
+    	$http.get('/api/rest/player/p1')
         .success(function(data) {
       	  $scope.player = data;
         })
@@ -41,7 +41,7 @@ angular.module('sevenWondersFrontApp')
     };
 
     $scope.playCard = function() {
-    	$http.post('/api/rest/player/0/play', {
+    	$http.post('/api/rest/player/p1/play', {
     	  id: 0,
     	  name: 'Lumber Yard',
     	  age: 1

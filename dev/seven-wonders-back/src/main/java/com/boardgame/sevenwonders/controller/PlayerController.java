@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.boardgame.sevenwonders.model.Card;
@@ -22,10 +21,10 @@ public class PlayerController {
 	@Resource
 	PlayerService playerService;
 
-	@RequestMapping(value = "/{playerId}", method = RequestMethod.GET)
-	public ResponseEntity<Player> getPlayer(@PathVariable Integer playerId) {
+	@RequestMapping(value = "/{login}", method = RequestMethod.GET)
+	public ResponseEntity<Player> getPlayer(@PathVariable String login) {
 		try {
-			Player player = playerService.findById(playerId);
+			Player player = playerService.findByLogin(login);
 			if (null == player) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			} else {
@@ -36,11 +35,11 @@ public class PlayerController {
 		}
 	}
 
-	@RequestMapping(value = "/{playerId}/play", method = RequestMethod.POST)
-	public ResponseEntity<Player> playCard(@PathVariable Integer playerId,
+	@RequestMapping(value = "/{login}/play", method = RequestMethod.POST)
+	public ResponseEntity<Player> playCard(@PathVariable String login,
 			@RequestBody Card card) {
 		try {
-			Player player = playerService.playCard(playerId, card);
+			Player player = playerService.playCard(login, card);
 			if (null == player) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			} else {

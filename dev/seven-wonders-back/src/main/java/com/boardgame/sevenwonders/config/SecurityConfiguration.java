@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -22,9 +23,11 @@ import com.boardgame.sevenwonders.security.AjaxAuthenticationSuccessHandler;
 @Slf4j
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    private int authenticationFailureCode = 401;
+	@Value("${code.failure.authentication}")
+    private int authenticationFailureCode;
 
-    private int ajaxFailureCode = 401;
+	@Value("${code.failure.ajax}")
+    private int ajaxFailureCode;
 
     @Resource
     private AuthenticationProvider authenticationProvider;
@@ -36,7 +39,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     protected void configureAuthorizeRequests(ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry authorizeRequests) {
         authorizeRequests
-                //PROXY
                 .regexMatchers(".*rest.*").authenticated();
     }
 
@@ -71,8 +73,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .frameOptions().disable();
 
         http.authorizeRequests()
-//                .regexMatchers(".*info(.*)?").permitAll()
-//                .regexMatchers(".*health(.*)?").permitAll()
                 .regexMatchers(".*rest/authenticate(.*)?").permitAll()
                 .regexMatchers(".*rest/userDetails(.*)?").permitAll();
 
