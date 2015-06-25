@@ -217,7 +217,185 @@
 
 
 	<!-- Age 1 Resource Cards -->
-
+	<bean id="chantier" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="111" />
+		<property name="name" value="Chantier" />
+		<property name="age" value="1" />
+		<property name="category" value="PRIMARY_RESOURCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="produce_1_wood" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+	
+	<bean id="cavite" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="112" />
+		<property name="name" value="Cavite" />
+		<property name="age" value="1" />
+		<property name="category" value="PRIMARY_RESOURCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="produce_1_stone" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+	
+	<bean id="bassin_argileux" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="113" />
+		<property name="name" value="Bassin Argileux" />
+		<property name="age" value="1" />
+		<property name="category" value="PRIMARY_RESOURCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="produce_1_brick" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+	
+	<bean id="filon" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="114" />
+		<property name="name" value="Filon" />
+		<property name="age" value="1" />
+		<property name="category" value="PRIMARY_RESOURCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="produce_1_metal" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+	
+	<bean id="friche" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="115" />
+		<property name="name" value="Friche" />
+		<property name="age" value="1" />
+		<property name="category" value="PRIMARY_RESOURCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="1" />
+		<property name="effects">
+			<list>
+				<ref bean="produce_1_wood_or_1_brick" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+	
+	<bean id="excavation" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="116" />
+		<property name="name" value="Excavation" />
+		<property name="age" value="1" />
+		<property name="category" value="PRIMARY_RESOURCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="1" />
+		<property name="effects">
+			<list>
+				<ref bean="produce_1_stone_or_1_brick" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+	
+	<bean id="fosse_argileuse" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="117" />
+		<property name="name" value="Fosse Argileuse" />
+		<property name="age" value="1" />
+		<property name="category" value="PRIMARY_RESOURCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="1" />
+		<property name="effects">
+			<list>
+				<ref bean="produce_1_brick_or_1_metal" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+	
+	<bean id="exploitation_forestiere" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="118" />
+		<property name="name" value="Exploitation Forestiere" />
+		<property name="age" value="1" />
+		<property name="category" value="PRIMARY_RESOURCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="1" />
+		<property name="effects">
+			<list>
+				<ref bean="produce_1_wood_or_1_stone" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+	
+	<bean id="gisement" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="119" />
+		<property name="name" value="Gisement" />
+		<property name="age" value="1" />
+		<property name="category" value="PRIMARY_RESOURCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="1" />
+		<property name="effects">
+			<list>
+				<ref bean="produce_1_wood_or_1_metal" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+	
+	<bean id="mine" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="120" />
+		<property name="name" value="Mine" />
+		<property name="age" value="1" />
+		<property name="category" value="PRIMARY_RESOURCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="1" />
+		<property name="effects">
+			<list>
+				<ref bean="produce_1_stone_or_1_metal" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
 	<!-- Age 1 Science Cards -->
 
 	<!-- Age 2 Commercial Cards -->

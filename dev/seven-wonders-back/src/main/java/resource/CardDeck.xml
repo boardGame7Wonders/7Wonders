@@ -22,6 +22,18 @@
 				<ref bean="palissade" />
 				<ref bean="caserne" />
 				<ref bean="tour_de_garde" />
+				
+				<ref bean="chantier" />
+				<ref bean="cavite" />
+				<ref bean="bassin_argileux" />
+				<ref bean="filon" />
+				<ref bean="friche" />
+				<ref bean="excavation" />
+				<ref bean="fosse_argileuse" />
+				<ref bean="exploitation_forestiere" />
+				<ref bean="gisement" />
+				<ref bean="mine" />
+				
 			</list>
 		</property>
 	</bean>
