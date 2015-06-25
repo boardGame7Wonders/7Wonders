@@ -22,6 +22,8 @@ public class Constants {
 	public static final String EFFECT_PRODUCE_RESOURCE = "produce_resource";
 	/*Gain gold, parameter: int ==> gold amount to grant*/
 	public static final String EFFECT_GAIN_GOLD = "gain_gold";
-	/*Modify military might,: string, int ==> operator , value */
+	/*Modify military might: string, int ==> operator , value */
 	public static final String EFFECT_MILITARY_MIGHT_MODIFIER = "military_might_modifier";
+	/*Gain victory points immediately:  int ==> value */
+	public static final String EFFECT_GAIN_VICTORY_POINTS = "gain_victory_points";
 }

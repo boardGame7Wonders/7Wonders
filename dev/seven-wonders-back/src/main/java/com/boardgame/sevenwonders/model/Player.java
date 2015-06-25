@@ -20,5 +20,7 @@ public class Player {
 	private int gold;
 	
 	private int militaryMight;
+	
+	private int victoryPoints;
 
 }
