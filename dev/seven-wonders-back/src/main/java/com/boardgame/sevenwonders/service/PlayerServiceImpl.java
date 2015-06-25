@@ -20,9 +20,9 @@ public class PlayerServiceImpl implements PlayerService, InitializingBean {
 	public void afterPropertiesSet() throws Exception {
 		// init players
 		players = new ArrayList<>();
-		Player player1 = new Player(0, "Player A", new ArrayList<String>(), 1);
+		Player player1 = new Player(0, "Player A", new ArrayList<String>(), 1, 0);
 		players.add(player1);
-		Player player2 = new Player(1, "Player B", new ArrayList<String>(), 3);
+		Player player2 = new Player(1, "Player B", new ArrayList<String>(), 3, 0);
 		players.add(player2);
 	}
 

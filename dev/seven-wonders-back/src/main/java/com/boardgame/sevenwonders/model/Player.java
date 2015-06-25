@@ -18,5 +18,7 @@ public class Player {
 	private List<String> resources;
 	
 	private int gold;
+	
+	private int militaryMight;
 
 }

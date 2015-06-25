@@ -20,6 +20,19 @@ public class EffectMechanism {
 		return player;
 	}
 	
+	protected static Player playerModifyMilitaryMight(Player player, String operator_s, int value){
+		switch(operator_s){
+		case Constants.OPERATOR_MINUS:
+			player.setMilitaryMight(player.getMilitaryMight() - value);
+			break;
+		case Constants.OPERATOR_PLUS:
+			player.setMilitaryMight(player.getMilitaryMight() + value);
+			break;
+		}
+		
+		return player;
+	}
+	
 	/*Only this function should be called from exterior*/
 	public static Player applyEffectToPlayer(Player player, CardEffect cardEffect) {
 		switch(cardEffect.getName()){
@@ -30,6 +43,11 @@ public class EffectMechanism {
 				break;
 			case Constants.EFFECT_PRODUCE_RESOURCE:
 				playerProduceResource(player, cardEffect.getParameters());
+				break;
+			case Constants.EFFECT_MILITARY_MIGHT_MODIFIER:
+				String operator_s = cardEffect.getParameters().get(0);
+				int value = Integer.valueOf(cardEffect.getParameters().get(1));
+				playerModifyMilitaryMight(player,operator_s,value);
 				break;
 			default:
 				break;
