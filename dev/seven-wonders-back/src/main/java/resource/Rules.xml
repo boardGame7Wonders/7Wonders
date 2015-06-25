@@ -10,5 +10,14 @@
 	
 	<!-- Definition of cards, dependent of CardEffects.xml -->
 	<import resource="Cards.xml" />
+	
+	<!-- Composition of card decks,
+		 Card are arranged in the order of 3+, 4+, 5+, 6+, 7+, Guilds.
+		 Given n players(2 < n < 7), the cards between the 1st and f(n) are the required basic cards for the game;
+		 n + 2 cards among the guild cards placed at the end of the list are randomly selected and added to form a deck.         
+		 dependent of CardEffects.xml and Cards.xml -->
+	<import resource="CardDeck.xml" />
+	
+	
 
 </beans>

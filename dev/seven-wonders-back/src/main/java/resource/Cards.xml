@@ -42,8 +42,8 @@
 			</list>
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
-	</bean>	
-	
+	</bean>
+
 	<bean id="comptoir_ouest" class="com.boardgame.sevenwonders.model.Card">
 		<property name="id" value="102" />
 		<property name="name" value="Comptoir Ouest" />
@@ -60,8 +60,8 @@
 			</list>
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
-	</bean>	
-	
+	</bean>
+
 	<bean id="marche" class="com.boardgame.sevenwonders.model.Card">
 		<property name="id" value="103" />
 		<property name="name" value="Marche" />
@@ -79,8 +79,8 @@
 			</list>
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
-	</bean>	
-		
+	</bean>
+
 	<!-- Age 1 Cultural Cards -->
 	<bean id="bains" class="com.boardgame.sevenwonders.model.Card">
 		<property name="id" value="104" />
@@ -154,49 +154,93 @@
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
 	</bean>
-	
+
 	<!-- Age 1 Military Cards -->
-	
-	<!-- Age 1 Resource Cards -->
-	
-	<!-- Age 1 Science Cards -->
-	
-	<!-- Age 2 Commercial Cards -->
-	
-	<!-- Age 2 Cultural Cards -->
-	
-	<!-- Age 2 Military Cards -->
-	
-	<!-- Age 2 Resource Cards -->
-	
-	<!-- Age 2 Science Cards -->
-	
-	<!-- Age 3 Commercial Cards -->
-	
-	<!-- Age 3 Cultural Cards -->
-	
-	<!-- Age 3 Guild Cards -->
-	
-	<!-- Age 3 Military Cards -->
-	
-	<!-- Age 3 Resource Cards -->
-	
-	<!-- Age 3 Science Cards -->
-	
-	<!--  Card Collection  -->
-	<!--  Take the first N cards according to number of players	 -->
-	<bean id="CardCollection" class="com.boardgame.sevenwonders.model.CardCollection">
-		<property name="cardList">
+
+	<bean id="palissade" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="108" />
+		<property name="name" value="Palissade" />
+		<property name="age" value="1" />
+		<property name="category" value="MILITARY" />
+		<property name="resourceCost">
 			<list>
-				<ref bean="bains" />
-				<ref bean="preteur_sur_cages" />
-				<ref bean="autel" />
-				<ref bean="theatre" />
+				<value>W</value>
 			</list>
 		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="gain_1_military_might" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+
+	<bean id="caserne" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="109" />
+		<property name="name" value="Caserne" />
+		<property name="age" value="1" />
+		<property name="category" value="MILITARY" />
+		<property name="resourceCost">
+			<list>
+				<value>M</value>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="gain_1_military_might" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+
+	<bean id="tour_de_garde" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="110" />
+		<property name="name" value="Tour De Garde" />
+		<property name="age" value="1" />
+		<property name="category" value="MILITARY" />
+		<property name="resourceCost">
+			<list>
+				<value>B</value>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="gain_1_military_might" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
 	</bean>
 
 
+
+	<!-- Age 1 Resource Cards -->
+
+	<!-- Age 1 Science Cards -->
+
+	<!-- Age 2 Commercial Cards -->
+
+	<!-- Age 2 Cultural Cards -->
+
+	<!-- Age 2 Military Cards -->
+
+	<!-- Age 2 Resource Cards -->
+
+	<!-- Age 2 Science Cards -->
+
+	<!-- Age 3 Commercial Cards -->
+
+	<!-- Age 3 Cultural Cards -->
+
+	<!-- Age 3 Guild Cards -->
+
+	<!-- Age 3 Military Cards -->
+
+	<!-- Age 3 Resource Cards -->
+
+	<!-- Age 3 Science Cards -->
 
 
 </beans>

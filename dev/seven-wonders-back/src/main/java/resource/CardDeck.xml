@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- Card Collection -->
+	<!-- Take the first N cards according to number of players -->
+	<bean id="CardCollection" class="com.boardgame.sevenwonders.model.CardCollection">
+		<property name="cardList">
+			<list>
+				<ref bean="tarverne" />
+				<ref bean="comptoir_est" />
+				<ref bean="comptoir_ouest" />
+				<ref bean="marche" />
+
+				<ref bean="bains" />
+				<ref bean="preteur_sur_cages" />
+				<ref bean="autel" />
+				<ref bean="theatre" />
+
+				<ref bean="palissade" />
+				<ref bean="caserne" />
+				<ref bean="tour_de_garde" />
+			</list>
+		</property>
+	</bean>
+
+</beans>

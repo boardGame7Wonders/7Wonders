@@ -5,10 +5,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-	
-<!-- Effects of cards -->	
-	
-<!-- Gain victory points -->
+
+	<!-- Effects of cards -->
+
+	<!-- Gain victory points -->
 	<bean id="gain_2_victory_points" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="gain_victory_points" />
 		<property name="parameters">
@@ -26,7 +26,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<!-- Produce resource -->
 
 	<bean id="produce_1_wood" class="com.boardgame.sevenwonders.model.CardEffect">
@@ -48,7 +48,64 @@
 		</property>
 	</bean>
 
-	<bean id="produce_1_wood_or_1_Stone" class="com.boardgame.sevenwonders.model.CardEffect">
+	<bean id="produce_1_stone" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>
+				<value>S</value> <!-- 1 stone -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="produce_2_stone" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>					<!-- 2 stone -->
+				<value>S</value>
+				<value>S</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="produce_1_brick" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>
+				<value>B</value> <!-- 1 brick -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="produce_2_brick" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>					<!-- 2 brick -->
+				<value>B</value>
+				<value>B</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="produce_1_metal" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>
+				<value>M</value> <!-- 1 metal -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="produce_2_metal" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>					<!-- 2 metal -->
+				<value>M</value>
+				<value>M</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="produce_1_wood_or_1_stone" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -57,6 +114,53 @@
 		</property>
 	</bean>
 	
+	<bean id="produce_1_wood_or_1_brick" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>
+				<value>WB</value>	<!-- wood or brick -->
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="produce_1_wood_or_1_metal" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>
+				<value>WM</value>	<!-- wood or metal -->
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="produce_1_stone_or_1_brick" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>
+				<value>SB</value>	<!-- stone or brick -->
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="produce_1_stone_or_1_metal" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>
+				<value>SM</value>	<!-- stone or metal -->
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="produce_1_brick_or_1_metal" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>
+				<value>BM</value>	<!-- brick or metal -->
+			</list>
+		</property>
+	</bean>
+	
+	
+
 	<!-- Gain Gold -->
 	<bean id="gain_5_gold" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="gain_gold" />
@@ -65,8 +169,8 @@
 				<value>5</value>  <!-- gold amout to gain -->
 			</list>
 		</property>
-	</bean>	
-	
+	</bean>
+
 	<!-- Trade Cost Modifier -->
 	<bean id="trade_cost_to_right_minus_1_for_primary_resource" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="trade_cost_modifier" />
@@ -78,8 +182,8 @@
 				<value>1</value>				<!-- value -->
 			</list>
 		</property>
-	</bean>	
-	
+	</bean>
+
 	<bean id="trade_cost_to_left_minus_1_for_primary_resource" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="trade_cost_modifier" />
 		<property name="parameters">
@@ -90,9 +194,10 @@
 				<value>1</value>				<!-- value -->
 			</list>
 		</property>
-	</bean>	
-	
-	<bean id="trade_cost_to_right_minus_1_for_secondary_resource" class="com.boardgame.sevenwonders.model.CardEffect">
+	</bean>
+
+	<bean id="trade_cost_to_right_minus_1_for_secondary_resource"
+		class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="trade_cost_modifier" />
 		<property name="parameters">
 			<list>
@@ -102,9 +207,10 @@
 				<value>1</value>				<!-- value -->
 			</list>
 		</property>
-	</bean>	
-	
-	<bean id="trade_cost_to_left_minus_1_for_secondary_resource" class="com.boardgame.sevenwonders.model.CardEffect">
+	</bean>
+
+	<bean id="trade_cost_to_left_minus_1_for_secondary_resource"
+		class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="trade_cost_modifier" />
 		<property name="parameters">
 			<list>
@@ -114,8 +220,43 @@
 				<value>1</value>				<!-- value -->
 			</list>
 		</property>
-	</bean>	
+	</bean>
 	
+	<!-- Military Modifier -->
+	
+	<bean id="gain_1_military_might"
+		class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="military_might_modifier" />
+		<property name="parameters">
+			<list>
+				<value>plus</value>			<!-- operator -->
+				<value>1</value>			<!-- value -->
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="gain_2_military_might"
+		class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="military_might_modifier" />
+		<property name="parameters">
+			<list>
+				<value>plus</value>			<!-- operator -->
+				<value>2</value>			<!-- value -->
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="gain_3_military_might"
+		class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="military_might_modifier" />
+		<property name="parameters">
+			<list>
+				<value>plus</value>			<!-- operator -->
+				<value>3</value>			<!-- value -->
+			</list>
+		</property>
+	</bean>
+
 	<!-- End of Card Effects -->
 
 
