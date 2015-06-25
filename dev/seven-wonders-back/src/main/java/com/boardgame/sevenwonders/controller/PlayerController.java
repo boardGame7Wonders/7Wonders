@@ -42,10 +42,11 @@ public class PlayerController {
 
 	@RequestMapping(value = "/{playerId}/play", method = RequestMethod.POST)
 	public ResponseEntity<Player> playCard(@PathVariable Integer playerId,
-			@RequestBody Integer cardId) {
+			@RequestBody Card card) {
 		try {
-			Card card = cardService.getCardByID(cardId.intValue());
-			Player player = playerService.playCard(playerId, card);
+			/*Post only id of the card is enough, e.g. { "id": 100 }*/
+			Card card_complete = cardService.getCardByID(card.getId());
+			Player player = playerService.playCard(playerId, card_complete);
 			if (null == player) {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			} else {
