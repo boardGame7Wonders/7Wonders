@@ -2,14 +2,10 @@ package com.boardgame.sevenwonders.service;
 
 import com.boardgame.sevenwonders.model.Card;
 import com.boardgame.sevenwonders.model.CardCollection;
-import com.boardgame.sevenwonders.model.Player;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
