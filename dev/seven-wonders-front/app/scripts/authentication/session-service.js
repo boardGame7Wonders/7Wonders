@@ -1,5 +1,5 @@
 'use strict';
-angular.module('sevenWondersFrontApp')
+angular.module('sevenWondersFrontApp.auth')
   .factory('Session', function() {
 
     this.create = function(data) {

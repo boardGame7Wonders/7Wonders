@@ -14,25 +14,21 @@ angular
     'ngCookies',
     'ngResource',
     'http-auth-interceptor',
-    'pascalprecht.translate'
+    'pascalprecht.translate',
+    'sevenWondersFrontApp.auth'
   ])
   .config(function($routeProvider, $translateProvider) {
-
-    function isAuthenticated($http) {
-      return $http.get('/api/rest/authenticate');
-    }
 
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
-        resolve: {
-          isAuthenticated: isAuthenticated
-        }
+        needAuthentication: true
       })
       .when('/login', {
         templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
+        controller: 'LoginCtrl',
+        isLoginPage: true
       })
       .otherwise({
         redirectTo: '/'
@@ -45,7 +41,18 @@ angular
     $translateProvider.preferredLanguage('en');
     $translateProvider.useCookieStorage();
   })
-  .run(function($rootScope, $location) {
+  .run(function($rootScope, $location, authenticationService, Session) {
+
+    // Call when url changes
+    $rootScope.$on('$routeChangeStart', function(event, next) {
+      if (next.needAuthentication) {
+        authenticationService.valid();
+      } else if (next.isLoginPage) {
+        if (Session.isConnected) {
+          $location.path('/').replace();
+        }
+      }
+    });
 
     // Call when the 401 response is returned by the server
     $rootScope.$on('event:auth-loginRequired', function() {
