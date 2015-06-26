@@ -48,7 +48,7 @@ angular
       if (next.needAuthentication) {
         authenticationService.valid();
       } else if (next.isLoginPage) {
-        if (Session.isConnected) {
+        if (Session.isConnected()) {
           $location.path('/').replace();
         }
       }
@@ -62,6 +62,11 @@ angular
     // Call when sucessfully login
     $rootScope.$on('event:auth-loginConfirmed', function() {
       $location.path('/').replace();
+    });
+
+    // Call when the user logs out
+    $rootScope.$on('event:auth-loginCancelled', function() {
+      $location.path('/login').replace();
     });
 
   });

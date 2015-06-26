@@ -8,7 +8,7 @@
  * Controller of the sevenWondersFrontApp
  */
 angular.module('sevenWondersFrontApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http, authenticationService) {
 
   	$scope.errorMessage = null;
 
@@ -57,4 +57,8 @@ angular.module('sevenWondersFrontApp')
           }
         });
     };
+
+    $scope.logout = function() {
+      authenticationService.logout();
+    }
   });

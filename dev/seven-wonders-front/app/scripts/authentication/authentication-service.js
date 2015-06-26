@@ -33,8 +33,19 @@ angular.module('sevenWondersFrontApp.auth', [])
         });
     }
 
+    function logout() {
+      $rootScope.authenticationError = false;
+      $rootScope.account = null;
+
+      $http.get('/app/logout').finally(function() {
+        Session.invalidate();
+        authService.loginCancelled();
+      });
+    }
+
     return {
       login: login,
-      valid: valid
+      valid: valid,
+      logout: logout
     };
   });

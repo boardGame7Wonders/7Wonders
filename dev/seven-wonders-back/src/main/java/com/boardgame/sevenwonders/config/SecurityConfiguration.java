@@ -17,6 +17,7 @@ import org.springframework.security.config.annotation.web.configurers.Expression
 import com.boardgame.sevenwonders.security.AjaxAuthenticationEntryPoint;
 import com.boardgame.sevenwonders.security.AjaxAuthenticationFailureHandler;
 import com.boardgame.sevenwonders.security.AjaxAuthenticationSuccessHandler;
+import com.boardgame.sevenwonders.security.AjaxLogoutSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -64,7 +65,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .logout()
             .logoutUrl("/app/logout")
             .deleteCookies("JSESSIONID")
-//            .logoutSuccessHandler(new AjaxLogoutSuccessHandler())
+            .logoutSuccessHandler(new AjaxLogoutSuccessHandler())
             .permitAll()
             .and()
             .csrf()
