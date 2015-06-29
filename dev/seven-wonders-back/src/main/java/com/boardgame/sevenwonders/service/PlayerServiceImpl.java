@@ -1,6 +1,7 @@
 package com.boardgame.sevenwonders.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Service;
 
 import com.boardgame.sevenwonders.model.Card;
+import com.boardgame.sevenwonders.model.Card.ScienceCategory;
 import com.boardgame.sevenwonders.model.CardEffect;
 import com.boardgame.sevenwonders.model.Player;
 
@@ -53,9 +55,9 @@ public class PlayerServiceImpl implements PlayerService, InitializingBean {
 	public void afterPropertiesSet() throws Exception {
 		// init players
 		players = new ArrayList<>();
-		Player player1 = new Player(0, "Player A", new ArrayList<String>(), 1, 0, 0);
+		Player player1 = new Player(0, "Player A", new ArrayList<String>(), 1, 0, 0, new HashMap<ScienceCategory, Integer>());
 		players.add(player1);
-		Player player2 = new Player(1, "Player B", new ArrayList<String>(), 3, 0, 0);
+		Player player2 = new Player(1, "Player B", new ArrayList<String>(), 3, 0, 0, new HashMap<ScienceCategory, Integer>());
 		players.add(player2);
 	}
 

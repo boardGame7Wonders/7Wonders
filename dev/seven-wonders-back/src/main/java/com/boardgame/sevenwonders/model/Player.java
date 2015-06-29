@@ -1,6 +1,10 @@
 package com.boardgame.sevenwonders.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import com.boardgame.sevenwonders.model.Card.ScienceCategory;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,5 +26,7 @@ public class Player {
 	private int militaryMight;
 	
 	private int victoryPoints;
+	
+	private Map<ScienceCategory, Integer> sciencePoints;
 
 }

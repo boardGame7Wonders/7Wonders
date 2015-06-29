@@ -1,7 +1,9 @@
 package com.boardgame.sevenwonders.service;
 
 import java.util.List;
+import java.util.Map;
 
+import com.boardgame.sevenwonders.model.Card.ScienceCategory;
 import com.boardgame.sevenwonders.model.CardEffect;
 import com.boardgame.sevenwonders.model.Constants;
 import com.boardgame.sevenwonders.model.Player;
@@ -34,6 +36,37 @@ public class EffectMechanism {
 
 		return player;
 	}
+	
+	protected static Player playerModifyScience(Player player, String scienceType, String operator_s, int value){
+		ScienceCategory scienceCategory = null;
+		switch (scienceType){
+		case Constants.SCIENCE_GEAR:
+			scienceCategory = ScienceCategory.GEAR;
+			break;
+		case Constants.SCIENCE_RULE:
+			scienceCategory = ScienceCategory.RULE;
+			break;
+		case Constants.SCIENCE_TABLET:
+			scienceCategory = ScienceCategory.TABLET;
+			break;
+		default:
+			/* TODO: make this an error*/
+			break;
+		}
+		
+		Map<ScienceCategory, Integer> scienceMap = player.getSciencePoints();
+		
+		switch (operator_s) {
+		case Constants.OPERATOR_MINUS:
+			scienceMap.put(scienceCategory, scienceMap.get(scienceCategory) - value);
+			break;
+		case Constants.OPERATOR_PLUS:
+			scienceMap.put(scienceCategory, scienceMap.get(scienceCategory) + value);
+			break;
+		}
+		
+		return player;
+	}
 
 	protected static Player playerGainVictoryPoints(Player player,
 			int victoryPoints) {
@@ -61,6 +94,12 @@ public class EffectMechanism {
 		case Constants.EFFECT_GAIN_VICTORY_POINTS: {
 			int value = Integer.valueOf(cardEffect.getParameters().get(0));
 			return playerGainVictoryPoints(player, value);
+		}
+		case Constants.EFFECT_SCIENCE_MODIFIER:{
+			String scienceType = cardEffect.getParameters().get(0);
+			String operator_s = cardEffect.getParameters().get(1);
+			int value = Integer.valueOf(cardEffect.getParameters().get(2));
+			return playerModifyScience(player, scienceType, operator_s, value);
 		}
 		default:
 			break;
