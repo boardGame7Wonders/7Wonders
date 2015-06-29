@@ -36,6 +36,11 @@
 				<ref bean="metier_a_tisser" />
 				<ref bean="presse" />
 				<ref bean="verrerie" />
+
+				<ref bean="officine" />
+				<ref bean="atelier" />
+				<ref bean="scriptorium" />
+				
 				
 			</list>
 		</property>

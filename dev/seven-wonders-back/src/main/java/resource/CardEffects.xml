@@ -281,6 +281,42 @@
 		</property>
 	</bean>
 
+	<!-- Science Modifier -->
+
+	<bean id="gain_1_science_rule" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="science_modifier" />
+		<property name="parameters">
+			<list>
+				<value>rule</value>			<!-- science category -->
+				<value>plus</value>			<!-- operator -->
+				<value>1</value>			<!-- value -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="gain_1_science_gear" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="science_modifier" />
+		<property name="parameters">
+			<list>
+				<value>gear</value>			<!-- science category -->
+				<value>plus</value>			<!-- operator -->
+				<value>1</value>			<!-- value -->
+			</list>
+		</property>
+	</bean>
+	<bean id="gain_1_science_tablet" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="science_modifier" />
+		<property name="parameters">
+			<list>
+				<value>tablet</value>		<!-- science category -->
+				<value>plus</value>			<!-- operator -->
+				<value>1</value>			<!-- value -->
+			</list>
+		</property>
+	</bean>
+
+
+
 	<!-- End of Card Effects -->
 
 

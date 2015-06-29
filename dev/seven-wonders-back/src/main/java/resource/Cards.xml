@@ -455,6 +455,63 @@
 
 	<!-- Age 1 Science Cards -->
 
+	<bean id="officine" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="124" />
+		<property name="name" value="Officine" />
+		<property name="age" value="1" />
+		<property name="category" value="SCIENCE" />
+		<property name="resourceCost">
+			<list>
+				<value>F</value>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="gain_1_science_rule" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+
+	<bean id="atelier" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="125" />
+		<property name="name" value="Atelier" />
+		<property name="age" value="1" />
+		<property name="category" value="SCIENCE" />
+		<property name="resourceCost">
+			<list>
+				<value>G</value>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="gain_1_science_gear" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+
+	<bean id="scriptorium" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="126" />
+		<property name="name" value="Scriptorium" />
+		<property name="age" value="1" />
+		<property name="category" value="SCIENCE" />
+		<property name="resourceCost">
+			<list>
+				<value>P</value>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="gain_1_science_tablet" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+
 	<!-- Age 2 Commercial Cards -->
 
 	<!-- Age 2 Cultural Cards -->
