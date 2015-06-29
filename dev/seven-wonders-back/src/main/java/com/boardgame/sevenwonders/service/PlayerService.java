@@ -10,5 +10,7 @@ public interface PlayerService {
 	void newPlayer(String login);
 	
 	Player playCard(String login, Card card);
+	
+	void removePlayer(String login);
 
 }

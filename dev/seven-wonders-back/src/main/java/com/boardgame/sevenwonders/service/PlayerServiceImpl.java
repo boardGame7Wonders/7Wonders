@@ -53,4 +53,13 @@ public class PlayerServiceImpl implements PlayerService, InitializingBean {
 		return player;
 	}
 
+	@Override
+	public void removePlayer(String login) {
+		Player player = findByLogin(login);
+
+		if (null != player) {
+			players.remove(player);
+		}
+	}
+
 }

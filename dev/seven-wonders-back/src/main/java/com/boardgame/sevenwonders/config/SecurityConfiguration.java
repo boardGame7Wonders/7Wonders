@@ -32,6 +32,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Resource
     private AuthenticationProvider authenticationProvider;
+    
+    @Resource
+    private AjaxLogoutSuccessHandler ajaxLogoutSuccessHandler;
 
     public SecurityConfiguration() {
         super();
@@ -65,7 +68,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .logout()
             .logoutUrl("/app/logout")
             .deleteCookies("JSESSIONID")
-            .logoutSuccessHandler(new AjaxLogoutSuccessHandler())
+//            .addLogoutHandler(new CustomLogoutHandler())
+            .logoutSuccessHandler(ajaxLogoutSuccessHandler)
             .permitAll()
             .and()
             .csrf()
