@@ -25,7 +25,7 @@ public class Card {
 	};
 	
 	public enum ScienceCategory{
-		TALBET,
+		TABLET,
 		RULE,
 		GEAR
 	};
