@@ -234,7 +234,7 @@
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
 	</bean>
-	
+
 	<bean id="cavite" class="com.boardgame.sevenwonders.model.Card">
 		<property name="id" value="112" />
 		<property name="name" value="Cavite" />
@@ -252,7 +252,7 @@
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
 	</bean>
-	
+
 	<bean id="bassin_argileux" class="com.boardgame.sevenwonders.model.Card">
 		<property name="id" value="113" />
 		<property name="name" value="Bassin Argileux" />
@@ -270,7 +270,7 @@
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
 	</bean>
-	
+
 	<bean id="filon" class="com.boardgame.sevenwonders.model.Card">
 		<property name="id" value="114" />
 		<property name="name" value="Filon" />
@@ -288,7 +288,7 @@
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
 	</bean>
-	
+
 	<bean id="friche" class="com.boardgame.sevenwonders.model.Card">
 		<property name="id" value="115" />
 		<property name="name" value="Friche" />
@@ -306,7 +306,7 @@
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
 	</bean>
-	
+
 	<bean id="excavation" class="com.boardgame.sevenwonders.model.Card">
 		<property name="id" value="116" />
 		<property name="name" value="Excavation" />
@@ -324,7 +324,7 @@
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
 	</bean>
-	
+
 	<bean id="fosse_argileuse" class="com.boardgame.sevenwonders.model.Card">
 		<property name="id" value="117" />
 		<property name="name" value="Fosse Argileuse" />
@@ -342,7 +342,7 @@
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
 	</bean>
-	
+
 	<bean id="exploitation_forestiere" class="com.boardgame.sevenwonders.model.Card">
 		<property name="id" value="118" />
 		<property name="name" value="Exploitation Forestiere" />
@@ -360,7 +360,7 @@
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
 	</bean>
-	
+
 	<bean id="gisement" class="com.boardgame.sevenwonders.model.Card">
 		<property name="id" value="119" />
 		<property name="name" value="Gisement" />
@@ -378,7 +378,7 @@
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
 	</bean>
-	
+
 	<bean id="mine" class="com.boardgame.sevenwonders.model.Card">
 		<property name="id" value="120" />
 		<property name="name" value="Mine" />
@@ -396,6 +396,63 @@
 		</property>
 		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
 	</bean>
+
+	<bean id="metier_a_tisser" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="121" />
+		<property name="name" value="Metier A Tisser" />
+		<property name="age" value="1" />
+		<property name="category" value="SECONDARY_RESOURCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="produce_1_fabric" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+
+	<bean id="presse" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="122" />
+		<property name="name" value="Presse" />
+		<property name="age" value="1" />
+		<property name="category" value="SECONDARY_RESOURCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="produce_1_paper" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+
+	<bean id="verrerie" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="123" />
+		<property name="name" value="Verrerie" />
+		<property name="age" value="1" />
+		<property name="category" value="SECONDARY_RESOURCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="produce_1_glass" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+	</bean>
+
+
+
 	<!-- Age 1 Science Cards -->
 
 	<!-- Age 2 Commercial Cards -->

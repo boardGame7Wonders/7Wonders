@@ -33,6 +33,9 @@
 				<ref bean="exploitation_forestiere" />
 				<ref bean="gisement" />
 				<ref bean="mine" />
+				<ref bean="metier_a_tisser" />
+				<ref bean="presse" />
+				<ref bean="verrerie" />
 				
 			</list>
 		</property>

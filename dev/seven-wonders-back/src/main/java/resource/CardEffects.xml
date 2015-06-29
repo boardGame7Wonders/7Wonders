@@ -66,7 +66,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean id="produce_1_brick" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
@@ -85,7 +85,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean id="produce_1_metal" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
@@ -113,7 +113,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean id="produce_1_wood_or_1_brick" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
@@ -122,7 +122,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean id="produce_1_wood_or_1_metal" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
@@ -131,7 +131,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean id="produce_1_stone_or_1_brick" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
@@ -140,7 +140,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean id="produce_1_stone_or_1_metal" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
@@ -149,7 +149,7 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<bean id="produce_1_brick_or_1_metal" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
@@ -158,8 +158,35 @@
 			</list>
 		</property>
 	</bean>
-	
-	
+
+	<bean id="produce_1_fabric" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>
+				<value>F</value>	<!-- fabric -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="produce_1_glass" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>
+				<value>G</value>	<!-- glass -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="produce_1_paper" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="name" value="produce_resource" />
+		<property name="parameters">
+			<list>
+				<value>P</value>	<!-- paper -->
+			</list>
+		</property>
+	</bean>
+
+
 
 	<!-- Gain Gold -->
 	<bean id="gain_5_gold" class="com.boardgame.sevenwonders.model.CardEffect">
@@ -221,11 +248,10 @@
 			</list>
 		</property>
 	</bean>
-	
+
 	<!-- Military Modifier -->
-	
-	<bean id="gain_1_military_might"
-		class="com.boardgame.sevenwonders.model.CardEffect">
+
+	<bean id="gain_1_military_might" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="military_might_modifier" />
 		<property name="parameters">
 			<list>
@@ -234,9 +260,8 @@
 			</list>
 		</property>
 	</bean>
-	
-	<bean id="gain_2_military_might"
-		class="com.boardgame.sevenwonders.model.CardEffect">
+
+	<bean id="gain_2_military_might" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="military_might_modifier" />
 		<property name="parameters">
 			<list>
@@ -245,9 +270,8 @@
 			</list>
 		</property>
 	</bean>
-	
-	<bean id="gain_3_military_might"
-		class="com.boardgame.sevenwonders.model.CardEffect">
+
+	<bean id="gain_3_military_might" class="com.boardgame.sevenwonders.model.CardEffect">
 		<property name="name" value="military_might_modifier" />
 		<property name="parameters">
 			<list>
