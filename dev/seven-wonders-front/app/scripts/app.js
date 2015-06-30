@@ -30,6 +30,11 @@ angular
         controller: 'LoginCtrl',
         isLoginPage: true
       })
+      .when('/sample', {
+        templateUrl: 'views/sample.html',
+        controller: 'SampleCtrl',
+        needAuthentication: true
+      })
       .otherwise({
         redirectTo: '/'
       });

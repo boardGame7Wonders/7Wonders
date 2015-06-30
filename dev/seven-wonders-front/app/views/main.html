@@ -1,27 +1,7 @@
-<div>Welcome {{account.user.login}}</div>
-<button class="btn btn-primary" ng-click="logout()">Log out</button>
-<div ng-show="!!errorMessage" class="alert alert-danger" role="alert">{{errorMessage}}</div>
-<div class="container usecase">
-  Use case 1 :
-  <button class="btn btn-primary" ng-click="getCardList()">Get card list from server</button>
-  <div class="row">
-    <div ng-repeat="card in cardList" class="col-xs-4 col-sm-4 col-md-4 card">
-	  <p>Id: {{card.id}}</p>
-	  <p>Name: {{card.name}}</p>
-	  <p>Age: {{card.age}}</p>
-    </div>
-  </div>
-</div>
-<div class="container usecase" style="margin-top:10px;">
-  Use case 2 :
-  <button class="btn btn-primary" ng-click="getPlayer()">Get player with id 0</button>
-  <button class="btn btn-primary" ng-click="playCard()">Play Lumber Yard</button>
-  <div class="row">
-  	<div class="player" ng-show="!!player">
-  		<p>Player: </p>
-  		<p>Id: {{player.id}}</p>
-  		<p>Name: {{player.name}}</p>
-  		<p>Resources :{{player.resources}}</p>
-  	</div>
+<div class="container">
+  <div class="col-xs-1 col-sm-1 col-md-1 player-summary">
+    <i class="fa fa-user fa-3x"></i>
+    <p>{{account.user.login}}</p>
+    <button class="btn btn-primary btn-xs" ng-click="logout()">Leave</button>
   </div>
 </div>

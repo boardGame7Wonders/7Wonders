@@ -9,6 +9,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -33,13 +34,14 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">sevenWondersFront</a>
+            <a class="navbar-brand" href="#/">Seven Wonders<span class="badge alert-info">beta</span></a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
               <li><a href="#/">Home</a></li>
+              <li><a href="#/sample">Sample</a></li>
             </ul>
           </div>
         </div>
@@ -87,6 +89,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/login/login-controller.js"></script>
+        <script src="scripts/sample/sample-controller.js"></script>
         <!-- auth module -->
         <script src="scripts/authentication/authentication-service.js"></script>
         <script src="scripts/authentication/session-service.js"></script>
