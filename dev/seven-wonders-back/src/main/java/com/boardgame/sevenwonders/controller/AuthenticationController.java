@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.boardgame.sevenwonders.model.Player;
+import com.boardgame.sevenwonders.model.PlayersDetails;
 import com.boardgame.sevenwonders.security.SecurityUtils;
 import com.boardgame.sevenwonders.service.PlayerService;
 
@@ -37,14 +37,13 @@ public class AuthenticationController {
         }
 	}
 	
-	@RequestMapping(value = "/userDetails", method = RequestMethod.GET)
-    public ResponseEntity<Player> getUserDetails(HttpServletRequest request) {
+	@RequestMapping(value = "/playersDetails", method = RequestMethod.GET)
+    public ResponseEntity<PlayersDetails> getUserDetails(HttpServletRequest request) {
         String login = SecurityUtils.getCurrentAuthenticatedLogin();
         if (null == login) {
             throw new BadCredentialsException("Not authenticated");
         }
-
-        return new ResponseEntity<Player>(playService.findByLogin(login), HttpStatus.OK);
+        return new ResponseEntity<PlayersDetails>(new PlayersDetails(playService.getAll(), login), HttpStatus.OK);
     }
 
 }

@@ -17,13 +17,6 @@ public class PlayerServiceImpl implements PlayerService, InitializingBean {
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		// init players
-		Player player1 = new Player("p1", "Player A", new ArrayList<String>());
-		player1.getResources().add("S");
-		players.add(player1);
-		Player player2 = new Player("p2", "Player B", new ArrayList<String>());
-		player2.getResources().add("W");
-		players.add(player2);
 	}
 
 	@Override
@@ -38,7 +31,7 @@ public class PlayerServiceImpl implements PlayerService, InitializingBean {
 
 	@Override
 	public void newPlayer(String login) {
-		players.add(new Player(login));
+		players.add(new Player(login, players.isEmpty()));
 	}
 
 	@Override
@@ -60,6 +53,15 @@ public class PlayerServiceImpl implements PlayerService, InitializingBean {
 		if (null != player) {
 			players.remove(player);
 		}
+		
+		if (player.isHost() && !players.isEmpty()) {
+			players.get(0).setHost(true);
+		}
+	}
+
+	@Override
+	public List<Player> getAll() {
+		return players;
 	}
 
 }

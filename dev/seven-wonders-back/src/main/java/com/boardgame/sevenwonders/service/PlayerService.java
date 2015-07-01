@@ -1,5 +1,7 @@
 package com.boardgame.sevenwonders.service;
 
+import java.util.List;
+
 import com.boardgame.sevenwonders.model.Card;
 import com.boardgame.sevenwonders.model.Player;
 
@@ -12,5 +14,7 @@ public interface PlayerService {
 	Player playCard(String login, Card card);
 	
 	void removePlayer(String login);
+	
+	List<Player> getAll();
 
 }

@@ -14,4 +14,8 @@ angular.module('sevenWondersFrontApp')
       authenticationService.logout();
     };
 
+    $scope.kick = function(player) {
+
+    };
+
   });

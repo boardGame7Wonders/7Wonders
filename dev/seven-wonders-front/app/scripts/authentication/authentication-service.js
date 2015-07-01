@@ -22,23 +22,24 @@ angular.module('sevenWondersFrontApp.auth', [])
     function valid() {
       $http.get('/api/rest/authenticate')
         .then(function() {
-          return $http.get('/api/rest/userDetails');
+          return $http.get('/api/rest/playersDetails');
         })
         .then(function(result) {
           Session.create(result.data);
-          $rootScope.account = Session;
+          $rootScope.context = Session.context;
+          $rootScope.authenticated = true;
         })
         .catch(function(error) {
           Session.invalidate();
+          $rootScope.context = null;
+          $rootScope.authenticated = false;
         });
     }
 
     function logout() {
       $rootScope.authenticationError = false;
-      $rootScope.account = null;
 
       $http.get('/app/logout').finally(function() {
-        Session.invalidate();
         authService.loginCancelled();
       });
     }

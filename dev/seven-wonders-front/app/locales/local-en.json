@@ -3,5 +3,9 @@
     "title": "Enter a name to get ready",
     "username": "Name",
     "submit": "OK"
+  },
+  "player": {
+    "leave": "Leave",
+    "kick": "Kick"
   }
 }

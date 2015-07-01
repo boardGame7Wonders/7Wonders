@@ -7,15 +7,15 @@ angular.module('sevenWondersFrontApp.auth')
         throw new Error('Can\'t create session with null or not object');
       }
 
-      this.user = data;
+      this.context = data;
     };
 
     this.invalidate = function() {
-      this.user = null;
+      this.context = null;
     };
 
     this.isConnected = function() {
-      return !!this.user;
+      return !!this.context;
     };
 
     return this;

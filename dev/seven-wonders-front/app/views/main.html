@@ -1,7 +1,8 @@
 <div class="container">
-  <div class="col-xs-1 col-sm-1 col-md-1 player-summary">
+  <div ng-repeat="player in context.players" class="col-xs-3 col-sm-3 col-md-3 player-summary" ng-class="player.login === context.self.login ? 'self': ''">
     <i class="fa fa-user fa-3x"></i>
-    <p>{{account.user.login}}</p>
-    <button class="btn btn-primary btn-xs" ng-click="logout()">Leave</button>
+    <p><i class="fa fa-home" ng-if="player.host"></i> {{player.login}}</p>
+    <button class="btn btn-warning btn-xs" ng-click="logout()" ng-if="player.login === context.self.login" translate="player.leave"></button>
+    <button class="btn btn-danger btn-xs" ng-click="kick(player)" ng-if="player.login !== context.self.login && context.self.host" translate="player.kick"></button>
   </div>
 </div>

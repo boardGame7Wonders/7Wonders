@@ -1,7 +1,9 @@
 package com.boardgame.sevenwonders.security;
 
 import java.security.Principal;
+
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -60,7 +62,6 @@ public final class SecurityUtils {
      * @return username
      */
     public static String getLoginFromPrincipal(Object principal) {
-        log.debug("User principal={}", principal);
         if (principal == null) {
             return null;
         }

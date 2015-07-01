@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,6 +14,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
+import org.springframework.security.core.session.SessionRegistry;
+import org.springframework.security.core.session.SessionRegistryImpl;
 
 import com.boardgame.sevenwonders.security.AjaxAuthenticationEntryPoint;
 import com.boardgame.sevenwonders.security.AjaxAuthenticationFailureHandler;
@@ -72,6 +75,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .logoutSuccessHandler(ajaxLogoutSuccessHandler)
             .permitAll()
             .and()
+            .sessionManagement()
+            .maximumSessions(1)
+            .sessionRegistry(sessionRegistry())
+            .and()
+            .and()
             .csrf()
             .disable()
             .headers()
@@ -84,5 +92,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         configureAuthorizeRequests(http.authorizeRequests());
 
         http.authorizeRequests().regexMatchers(".*").denyAll();
+    }
+    
+    @Bean
+    public SessionRegistry sessionRegistry() {
+    	SessionRegistry sessionRegistry = new SessionRegistryImpl();
+    	return sessionRegistry;
     }
 }

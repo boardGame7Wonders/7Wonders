@@ -33,3 +33,7 @@
 .player-summary {
   text-align: center;
 }
+
+.self {
+  color: #00ace6;
+}
