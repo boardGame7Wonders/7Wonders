@@ -45,7 +45,7 @@ angular
     $translateProvider.preferredLanguage('en');
     $translateProvider.useCookieStorage();
   })
-  .run(function($rootScope, $location, authenticationService, Session) {
+  .run(function($rootScope, $location, $interval, authenticationService, Session) {
 
     // Call when url changes
     $rootScope.$on('$routeChangeStart', function(event, next) {
@@ -78,6 +78,18 @@ angular
       $rootScope.context = null;
       $rootScope.authenticated = false;
       $location.path('/login').replace();
+    });
+
+    $rootScope.$watch('authenticated', function(newValue, oldValue) {
+      if (oldValue !== newValue) {
+        if (true === newValue) {
+          $rootScope.refresh = $interval(function() {
+            authenticationService.valid();
+          }, 10000);
+        } else if (false === newValue) {
+          $interval.cancel($rootScope.refresh);
+        }
+      }
     });
 
   });
