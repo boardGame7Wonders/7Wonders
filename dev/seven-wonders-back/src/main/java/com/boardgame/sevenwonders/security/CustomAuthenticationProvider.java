@@ -16,6 +16,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.preauth.PreAuthenticatedAuthenticationToken;
 import org.springframework.stereotype.Service;
 
+import com.boardgame.sevenwonders.model.GameConstant;
 import com.boardgame.sevenwonders.model.Player;
 import com.boardgame.sevenwonders.service.PlayerService;
 
@@ -33,9 +34,14 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		String login = SecurityUtils.getLoginFromAuthentication(authentication);
+		log.debug("Try logging in with player {}", login);
 
 		if (StringUtils.isBlank(login)) {
 			throw new BadCredentialsException("login.error.empty");
+		}
+		
+		if (playerService.countAll() == GameConstant.MAX_PLAYERS) {
+			throw new BadCredentialsException("login.error.maxPlayers");
 		}
 		
 		Player player = playerService.findByLogin(login);

@@ -77,7 +77,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .and()
             .sessionManagement()
             .maximumSessions(1)
-            .maxSessionsPreventsLogin(true)
             .sessionRegistry(sessionRegistry())
             .and()
             .and()

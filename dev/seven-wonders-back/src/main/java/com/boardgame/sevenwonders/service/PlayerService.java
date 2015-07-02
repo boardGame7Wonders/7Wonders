@@ -18,5 +18,7 @@ public interface PlayerService {
 	List<Player> getAll();
 	
 	void kickPlayer(String login);
+	
+	int countAll();
 
 }

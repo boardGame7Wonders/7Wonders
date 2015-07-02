@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.security.core.session.SessionInformation;
@@ -18,7 +16,7 @@ import com.boardgame.sevenwonders.model.Player;
 
 @Service
 public class PlayerServiceImpl implements PlayerService, InitializingBean {
-	
+
 	@Resource
 	private SessionRegistry sessionRegistry;
 
@@ -66,7 +64,7 @@ public class PlayerServiceImpl implements PlayerService, InitializingBean {
 				players.get(0).setHost(true);
 			}
 		}
-		
+
 	}
 
 	@Override
@@ -83,6 +81,11 @@ public class PlayerServiceImpl implements PlayerService, InitializingBean {
 			}
 		}
 		removePlayer(login);
+	}
+	
+	@Override
+	public int countAll() {
+		return players.size();
 	}
 
 }
