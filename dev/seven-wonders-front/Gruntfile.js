@@ -80,7 +80,12 @@ module.exports = function (grunt) {
         {
           context: '/api/rest',
           host: 'localhost',
-          port: 8080
+          port: 8180
+        },
+        {
+          context: '/app',
+          host: 'localhost',
+          port: 8180
         }
       ],
       livereload: {
@@ -356,7 +361,8 @@ module.exports = function (grunt) {
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            'locales/**/*.*'
           ]
         }, {
           expand: true,

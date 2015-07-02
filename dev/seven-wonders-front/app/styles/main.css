@@ -29,3 +29,11 @@
 	margin-top: 10px;
 	border: 1px solid red;
 }
+
+.player-summary {
+  text-align: center;
+}
+
+.self {
+  color: #00ace6;
+}

@@ -1,0 +1,17 @@
+{
+  "login": {
+    "title": "Log in",
+    "username": "Name",
+    "submit": "OK",
+    "error": {
+      "unauthorized": "Please log in to access more information.",
+      "empty": "Login can't be empty.",
+      "playerExists": "Player already exists, please choose another login.",
+      "maxPlayers": "The max number of players has been reached."
+    }
+  },
+  "player": {
+    "leave": "Leave",
+    "kick": "Kick"
+  }
+}

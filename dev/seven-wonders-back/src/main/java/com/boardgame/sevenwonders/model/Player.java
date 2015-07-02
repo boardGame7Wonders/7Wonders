@@ -11,10 +11,23 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Player {
 	
-	private int id;
+	private String login;
 	
 	private String name;
 	
 	private List<String> resources;
+	
+	private boolean host = false;
 
+	public Player(String login) {
+		super();
+		this.login = login;
+	}
+	
+	public Player(String login, boolean host) {
+		super();
+		this.login = login;
+		this.host = host;
+	}
+	
 }
