@@ -16,5 +16,7 @@ public interface PlayerService {
 	void removePlayer(String login);
 	
 	List<Player> getAll();
+	
+	void kickPlayer(String login);
 
 }

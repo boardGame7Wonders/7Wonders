@@ -77,6 +77,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .and()
             .sessionManagement()
             .maximumSessions(1)
+            .maxSessionsPreventsLogin(true)
             .sessionRegistry(sessionRegistry())
             .and()
             .and()
@@ -86,8 +87,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .frameOptions().disable();
 
         http.authorizeRequests()
-                .regexMatchers(".*rest/authenticate(.*)?").permitAll()
-                .regexMatchers(".*rest/userDetails(.*)?").permitAll();
+                .regexMatchers(".*rest/authenticate(.*)?").permitAll();
 
         configureAuthorizeRequests(http.authorizeRequests());
 

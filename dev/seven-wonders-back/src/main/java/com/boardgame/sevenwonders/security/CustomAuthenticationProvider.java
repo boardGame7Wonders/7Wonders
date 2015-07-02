@@ -32,14 +32,10 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-		if (null == authentication.getPrincipal()) {
-			throw new BadCredentialsException("No user principal supplied");
-		}
-
 		String login = SecurityUtils.getLoginFromAuthentication(authentication);
 
-		if (StringUtils.isEmpty(login)) {
-			throw new BadCredentialsException("No login supplied");
+		if (StringUtils.isBlank(login)) {
+			throw new BadCredentialsException("login.error.empty");
 		}
 		
 		Player player = playerService.findByLogin(login);
@@ -47,7 +43,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		if (player == null) {
 			playerService.newPlayer(login);
 		} else {
-			throw new BadCredentialsException("Player already exists.");
+			throw new BadCredentialsException("login.error.playerExists");
 		}
 
 		UsernamePasswordAuthenticationToken result = new UsernamePasswordAuthenticationToken(authentication.getPrincipal(), authentication.getCredentials(), null);

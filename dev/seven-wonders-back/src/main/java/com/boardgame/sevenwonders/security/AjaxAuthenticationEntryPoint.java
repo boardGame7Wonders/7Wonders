@@ -27,6 +27,6 @@ public class AjaxAuthenticationEntryPoint implements AuthenticationEntryPoint {
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authenticationException) throws IOException,
             ServletException {
         log.error("Request failure", authenticationException);
-        response.sendError(code);
+        response.sendError(code, "login.error.unauthorized");
     }
 }
