@@ -1,8 +1,13 @@
 {
   "login": {
-    "title": "Enter a name to get ready",
+    "title": "Log in",
     "username": "Name",
-    "submit": "OK"
+    "submit": "OK",
+    "error": {
+      "unauthorized": "Please log in to access more information.",
+      "empty": "Login can't be empty.",
+      "playerExists": "Player already exists, please choose another login."
+    }
   },
   "player": {
     "leave": "Leave",

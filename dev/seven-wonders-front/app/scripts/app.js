@@ -13,7 +13,6 @@ angular
     'ngRoute',
     'ngCookies',
     'ngResource',
-    'http-auth-interceptor',
     'pascalprecht.translate',
     'sevenWondersFrontApp.auth'
   ])
@@ -46,7 +45,7 @@ angular
     $translateProvider.preferredLanguage('en');
     $translateProvider.useCookieStorage();
   })
-  .run(function($rootScope, $location, $interval, authenticationService, Session) {
+  .run(function($rootScope, $location, authenticationService, Session) {
 
     // Call when url changes
     $rootScope.$on('$routeChangeStart', function(event, next) {
@@ -60,10 +59,11 @@ angular
     });
 
     // Call when the 401 response is returned by the server
-    $rootScope.$on('event:auth-loginRequired', function() {
+    $rootScope.$on('event:auth-loginRequired', function(event, response) {
       Session.invalidate();
       $rootScope.context = null;
       $rootScope.authenticated = false;
+      $rootScope.authenticationError = response.data.message;
       $location.path('/login').replace();
     });
 
@@ -78,18 +78,6 @@ angular
       $rootScope.context = null;
       $rootScope.authenticated = false;
       $location.path('/login').replace();
-    });
-
-    $rootScope.$watch('authenticated', function(newValue, oldValue) {
-      if (oldValue !== newValue) {
-        if (true === newValue) {
-          $rootScope.refresh = $interval(function() {
-            authenticationService.valid();
-          }, 10000);
-        } else if (false === newValue) {
-          $interval.cancel($rootScope.refresh);
-        }
-      }
     });
 
   });

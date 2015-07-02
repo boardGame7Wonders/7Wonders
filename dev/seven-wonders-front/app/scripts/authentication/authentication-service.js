@@ -12,7 +12,7 @@ angular.module('sevenWondersFrontApp.auth', [])
           ignoreAuthModule: true //deactivate the module http-auth-interceptor
         })
         .then(function() {
-          authService.loginConfirmed(data);
+          authService.loginConfirmed();
         })
         .catch(function(error) {
           $rootScope.authenticationError = error.data.message;
