@@ -19,6 +19,17 @@ public class PlayerServiceImpl implements PlayerService, InitializingBean {
 
 	private List<Player> players;
 
+	protected Player createPlayer(int id, String name){
+		Player player = new Player(id, name, new ArrayList<String>(), 1, 0, 0, new HashMap<ScienceCategory, Integer>());
+		/*initiate science score*/
+		player.getSciencePoints().put(ScienceCategory.GEAR,   0);
+		player.getSciencePoints().put(ScienceCategory.RULE,   0);
+		player.getSciencePoints().put(ScienceCategory.TABLET, 0);
+		/*Add to player pool*/
+		players.add(player);
+		return player;
+	}
+	
 	protected boolean cardCost(Player player, Card card, boolean apply){
 		if(player.getGold() >= card.getGoldCost()){
 			List<String> playerResource = new LinkedList<String>(player.getResources());
@@ -53,12 +64,10 @@ public class PlayerServiceImpl implements PlayerService, InitializingBean {
 	}
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		// init players
+		// initialize players
 		players = new ArrayList<>();
-		Player player1 = new Player(0, "Player A", new ArrayList<String>(), 1, 0, 0, new HashMap<ScienceCategory, Integer>());
-		players.add(player1);
-		Player player2 = new Player(1, "Player B", new ArrayList<String>(), 3, 0, 0, new HashMap<ScienceCategory, Integer>());
-		players.add(player2);
+		Player player1 = createPlayer(0, "Player A"); 
+		Player player2 = createPlayer(1, "Player B"); 
 	}
 
 	@Override
@@ -85,5 +94,7 @@ public class PlayerServiceImpl implements PlayerService, InitializingBean {
 
 		return player;
 	}
+	
+	
 
 }
