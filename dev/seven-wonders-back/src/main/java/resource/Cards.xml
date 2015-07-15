@@ -23,7 +23,12 @@
 				<ref bean="gain_5_gold" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
+
 	</bean>
 
 	<bean id="comptoir_est" class="com.boardgame.sevenwonders.model.Card">
@@ -41,7 +46,11 @@
 				<ref bean="trade_cost_to_right_minus_1_for_primary_resource" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="comptoir_ouest" class="com.boardgame.sevenwonders.model.Card">
@@ -59,7 +68,11 @@
 				<ref bean="trade_cost_to_left_minus_1_for_primary_resource" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="marche" class="com.boardgame.sevenwonders.model.Card">
@@ -78,7 +91,11 @@
 				<ref bean="trade_cost_to_right_minus_1_for_secondary_resource" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<!-- Age 1 Cultural Cards -->
@@ -98,7 +115,11 @@
 				<ref bean="gain_3_victory_points" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="preteur_sur_cages" class="com.boardgame.sevenwonders.model.Card">
@@ -116,7 +137,11 @@
 				<ref bean="gain_3_victory_points" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="autel" class="com.boardgame.sevenwonders.model.Card">
@@ -134,7 +159,11 @@
 				<ref bean="gain_2_victory_points" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="theatre" class="com.boardgame.sevenwonders.model.Card">
@@ -152,7 +181,11 @@
 				<ref bean="gain_2_victory_points" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<!-- Age 1 Military Cards -->
@@ -173,7 +206,11 @@
 				<ref bean="gain_1_military_might" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="caserne" class="com.boardgame.sevenwonders.model.Card">
@@ -192,7 +229,11 @@
 				<ref bean="gain_1_military_might" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="tour_de_garde" class="com.boardgame.sevenwonders.model.Card">
@@ -211,7 +252,11 @@
 				<ref bean="gain_1_military_might" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 
@@ -232,7 +277,11 @@
 				<ref bean="produce_1_wood" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="cavite" class="com.boardgame.sevenwonders.model.Card">
@@ -250,7 +299,11 @@
 				<ref bean="produce_1_stone" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="bassin_argileux" class="com.boardgame.sevenwonders.model.Card">
@@ -268,7 +321,11 @@
 				<ref bean="produce_1_brick" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="filon" class="com.boardgame.sevenwonders.model.Card">
@@ -286,7 +343,11 @@
 				<ref bean="produce_1_metal" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="friche" class="com.boardgame.sevenwonders.model.Card">
@@ -304,7 +365,11 @@
 				<ref bean="produce_1_wood_or_1_brick" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="excavation" class="com.boardgame.sevenwonders.model.Card">
@@ -322,7 +387,11 @@
 				<ref bean="produce_1_stone_or_1_brick" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="fosse_argileuse" class="com.boardgame.sevenwonders.model.Card">
@@ -340,7 +409,11 @@
 				<ref bean="produce_1_brick_or_1_metal" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="exploitation_forestiere" class="com.boardgame.sevenwonders.model.Card">
@@ -358,7 +431,11 @@
 				<ref bean="produce_1_wood_or_1_stone" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="gisement" class="com.boardgame.sevenwonders.model.Card">
@@ -376,7 +453,11 @@
 				<ref bean="produce_1_wood_or_1_metal" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="mine" class="com.boardgame.sevenwonders.model.Card">
@@ -394,7 +475,11 @@
 				<ref bean="produce_1_stone_or_1_metal" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="metier_a_tisser" class="com.boardgame.sevenwonders.model.Card">
@@ -412,7 +497,11 @@
 				<ref bean="produce_1_fabric" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="presse" class="com.boardgame.sevenwonders.model.Card">
@@ -430,7 +519,11 @@
 				<ref bean="produce_1_paper" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="verrerie" class="com.boardgame.sevenwonders.model.Card">
@@ -448,7 +541,11 @@
 				<ref bean="produce_1_glass" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 
@@ -471,7 +568,11 @@
 				<ref bean="gain_1_science_rule" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="atelier" class="com.boardgame.sevenwonders.model.Card">
@@ -490,7 +591,11 @@
 				<ref bean="gain_1_science_gear" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<bean id="scriptorium" class="com.boardgame.sevenwonders.model.Card">
@@ -509,10 +614,103 @@
 				<ref bean="gain_1_science_tablet" />
 			</list>
 		</property>
-		<property name="upgradeFromCardID" value="-1" /> <!-- negative number for impossibility to upgrade from any card -->
+		<property name="upgradeFromCardID">
+			<list>
+				
+			</list>
+		</property>
 	</bean>
 
 	<!-- Age 2 Commercial Cards -->
+
+	<bean id="forum" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="201" />
+		<property name="name" value="Forum" />
+		<property name="age" value="2" />
+		<property name="category" value="COMMERCE" />
+		<property name="resourceCost">
+			<list>
+				<value>B</value>
+				<value>B</value>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="import_one_secondary_resource" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID">
+			<list>
+				<value>101</value> <!-- comptoir_est -->
+				<value>102</value> <!-- comptoir_ouest -->
+			</list>
+		</property>
+	</bean>
+	<bean id="caravanserail" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="202" />
+		<property name="name" value="Caravanserail" />
+		<property name="age" value="2" />
+		<property name="category" value="COMMERCE" />
+		<property name="resourceCost">
+			<list>
+				<value>W</value>
+				<value>W</value>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="import_one_primary_resource" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID">
+			<list>
+				<value>103</value> <!-- marche -->
+			</list>
+		</property>
+	</bean>
+	<bean id="vignoble" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="203" />
+		<property name="name" value="Vignoble" />
+		<property name="age" value="2" />
+		<property name="category" value="COMMERCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="gain_1_gold_from_primary_resource" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID">
+			<list>
+			</list>
+		</property>
+	</bean>
+	<bean id="bazar" class="com.boardgame.sevenwonders.model.Card">
+		<property name="id" value="204" />
+		<property name="name" value="Bazar" />
+		<property name="age" value="2" />
+		<property name="category" value="COMMERCE" />
+		<property name="resourceCost">
+			<list>
+			</list>
+		</property>
+		<property name="goldCost" value="0" />
+		<property name="effects">
+			<list>
+				<ref bean="gain_2_gold_from_secondary_resource" />
+			</list>
+		</property>
+		<property name="upgradeFromCardID">
+			<list>
+			</list>
+		</property>
+	</bean>
+
 
 	<!-- Age 2 Cultural Cards -->
 

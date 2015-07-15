@@ -44,6 +44,6 @@ public class Card {
 	
 	private List<CardEffect> effects;
 	
-	private int upgradeFromCardID;
+	private List<Integer> upgradeFromCardID;
 
 }
