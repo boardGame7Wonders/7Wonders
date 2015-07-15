@@ -11,6 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CardEffect {
 	
+	public enum EffectType{
+		IMMEDIATE,
+		ENDGAME
+	};
+	private EffectType type;
+	
 	private String name;
 	
 	private List<String> parameters;
