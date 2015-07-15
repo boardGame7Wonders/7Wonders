@@ -10,6 +10,7 @@
 
 	<!-- Gain victory points -->
 	<bean id="gain_2_victory_points" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="gain_victory_points" />
 		<property name="parameters">
 			<list>
@@ -19,6 +20,7 @@
 	</bean>
 
 	<bean id="gain_3_victory_points" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="gain_victory_points" />
 		<property name="parameters">
 			<list>
@@ -30,6 +32,7 @@
 	<!-- Produce resource -->
 
 	<bean id="produce_1_wood" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -39,6 +42,7 @@
 	</bean>
 
 	<bean id="produce_2_wood" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>					<!-- 2 wood -->
@@ -49,6 +53,7 @@
 	</bean>
 
 	<bean id="produce_1_stone" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -58,6 +63,7 @@
 	</bean>
 
 	<bean id="produce_2_stone" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>					<!-- 2 stone -->
@@ -68,6 +74,7 @@
 	</bean>
 
 	<bean id="produce_1_brick" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -77,6 +84,7 @@
 	</bean>
 
 	<bean id="produce_2_brick" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>					<!-- 2 brick -->
@@ -87,6 +95,7 @@
 	</bean>
 
 	<bean id="produce_1_metal" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -96,6 +105,7 @@
 	</bean>
 
 	<bean id="produce_2_metal" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>					<!-- 2 metal -->
@@ -106,6 +116,7 @@
 	</bean>
 
 	<bean id="produce_1_wood_or_1_stone" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -115,6 +126,7 @@
 	</bean>
 
 	<bean id="produce_1_wood_or_1_brick" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -124,6 +136,7 @@
 	</bean>
 
 	<bean id="produce_1_wood_or_1_metal" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -133,6 +146,7 @@
 	</bean>
 
 	<bean id="produce_1_stone_or_1_brick" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -142,6 +156,7 @@
 	</bean>
 
 	<bean id="produce_1_stone_or_1_metal" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -151,6 +166,7 @@
 	</bean>
 
 	<bean id="produce_1_brick_or_1_metal" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -160,6 +176,7 @@
 	</bean>
 
 	<bean id="produce_1_fabric" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -169,6 +186,7 @@
 	</bean>
 
 	<bean id="produce_1_glass" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -178,6 +196,7 @@
 	</bean>
 
 	<bean id="produce_1_paper" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="produce_resource" />
 		<property name="parameters">
 			<list>
@@ -186,10 +205,30 @@
 		</property>
 	</bean>
 
-
+	<!-- Import resources -->
+	<bean id="import_one_primary_resource" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
+		<property name="name" value="import_resource" />
+		<property name="parameters">
+			<list>
+				<value>WSBM</value>	<!-- wood, stone, brick or metal -->
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="import_one_secondary_resource" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
+		<property name="name" value="import_resource" />
+		<property name="parameters">
+			<list>
+				<value>FGP</value>	<!-- fabric, glass, paper  -->
+			</list>
+		</property>
+	</bean>
 
 	<!-- Gain Gold -->
 	<bean id="gain_5_gold" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="gain_gold" />
 		<property name="parameters">
 			<list>
@@ -197,9 +236,35 @@
 			</list>
 		</property>
 	</bean>
+	
+	<bean id="gain_1_gold_from_primary_resource" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
+		<property name="name" value="gain_gold_on_card_type" />
+		<property name="parameters">
+			<list>
+				<value>PRIMARY_RESOURCE</value>		<!-- type of card -->
+				<value>1</value>  					<!-- left neighbour -->
+				<value>1</value>  					<!-- self -->
+				<value>1</value>  					<!-- right neighbour -->
+			</list>
+		</property>
+	</bean>
+	<bean id="gain_2_gold_from_secondary_resource" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
+		<property name="name" value="gain_gold_on_card_type" />
+		<property name="parameters">
+			<list>
+				<value>SECONDARY_RESOURCE</value>   <!-- type of card -->
+				<value>2</value>  					<!-- left neighbour -->
+				<value>2</value>  					<!-- self -->
+				<value>2</value>  					<!-- right neighbour -->
+			</list>
+		</property>
+	</bean>
 
 	<!-- Trade Cost Modifier -->
 	<bean id="trade_cost_to_right_minus_1_for_primary_resource" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="trade_cost_modifier" />
 		<property name="parameters">
 			<list>
@@ -212,6 +277,7 @@
 	</bean>
 
 	<bean id="trade_cost_to_left_minus_1_for_primary_resource" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="trade_cost_modifier" />
 		<property name="parameters">
 			<list>
@@ -225,6 +291,7 @@
 
 	<bean id="trade_cost_to_right_minus_1_for_secondary_resource"
 		class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="trade_cost_modifier" />
 		<property name="parameters">
 			<list>
@@ -238,6 +305,7 @@
 
 	<bean id="trade_cost_to_left_minus_1_for_secondary_resource"
 		class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="trade_cost_modifier" />
 		<property name="parameters">
 			<list>
@@ -252,6 +320,7 @@
 	<!-- Military Modifier -->
 
 	<bean id="gain_1_military_might" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="military_might_modifier" />
 		<property name="parameters">
 			<list>
@@ -262,6 +331,7 @@
 	</bean>
 
 	<bean id="gain_2_military_might" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="military_might_modifier" />
 		<property name="parameters">
 			<list>
@@ -272,6 +342,7 @@
 	</bean>
 
 	<bean id="gain_3_military_might" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="military_might_modifier" />
 		<property name="parameters">
 			<list>
@@ -284,6 +355,7 @@
 	<!-- Science Modifier -->
 
 	<bean id="gain_1_science_rule" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="science_modifier" />
 		<property name="parameters">
 			<list>
@@ -295,6 +367,7 @@
 	</bean>
 
 	<bean id="gain_1_science_gear" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="science_modifier" />
 		<property name="parameters">
 			<list>
@@ -305,6 +378,7 @@
 		</property>
 	</bean>
 	<bean id="gain_1_science_tablet" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="IMMEDIATE" />
 		<property name="name" value="science_modifier" />
 		<property name="parameters">
 			<list>
@@ -316,7 +390,109 @@
 	</bean>
 
 
+	<!-- End Game Effects -->
+	
+	<!-- Neighbour with benefits ;) -->
+	<bean id="neighbour_card_endgame_benefits_victory_points_culture_l1_r1" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="ENDGAME" />
+		<property name="name" value="neighbour_card_benefits" />
+		<property name="parameters">
+			<list>
+				<value>CULTURE</value>		<!-- benefiting card type -->
+				<value>1</value>			<!-- left neighbour's benefit coefficient -->
+				<value>1</value>			<!-- right neighbour's benefit coefficient -->
+			</list>
+		</property>
+	</bean>
 
+	<bean id="neighbour_card_endgame_benefits_victory_points_commerce_l1_r1" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="ENDGAME" />
+		<property name="name" value="neighbour_card_benefits" />
+		<property name="parameters">
+			<list>
+				<value>COMMERCE</value>		<!-- benefiting card type -->
+				<value>1</value>			<!-- left neighbour's benefit coefficient -->
+				<value>1</value>			<!-- right neighbour's benefit coefficient -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="neighbour_card_endgame_benefits_victory_points_guild_l1_r1" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="ENDGAME" />
+		<property name="name" value="neighbour_card_benefits" />
+		<property name="parameters">
+			<list>
+				<value>GUILD</value>		<!-- benefiting card type -->
+				<value>1</value>			<!-- left neighbour's benefit coefficient -->
+				<value>1</value>			<!-- right neighbour's benefit coefficient -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="neighbour_card_endgame_benefits_victory_points_military_l1_r1" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="ENDGAME" />
+		<property name="name" value="neighbour_card_benefits" />
+		<property name="parameters">
+			<list>
+				<value>MILITARY</value>		<!-- benefiting card type -->
+				<value>1</value>			<!-- left neighbour's benefit coefficient -->
+				<value>1</value>			<!-- right neighbour's benefit coefficient -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="neighbour_card_endgame_benefits_victory_points_primary_resource_l1_r1"
+		class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="ENDGAME" />
+		<property name="name" value="neighbour_card_benefits" />
+		<property name="parameters">
+			<list>
+				<value>PRIMARY_RESOURCE</value>		<!-- benefiting card type -->
+				<value>1</value>			<!-- left neighbour's benefit coefficient -->
+				<value>1</value>			<!-- right neighbour's benefit coefficient -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="neighbour_card_endgame_benefits_victory_points_secondary_resource_l2_r2"
+		class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="ENDGAME" />
+		<property name="name" value="neighbour_card_benefits" />
+		<property name="parameters">
+			<list>
+				<value>SECONDARY_RESOURCE</value>		<!-- benefiting card type -->
+				<value>2</value>			<!-- left neighbour's benefit coefficient -->
+				<value>2</value>			<!-- right neighbour's benefit coefficient -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="neighbour_card_endgame_benefits_victory_points_science_l1_r1" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="ENDGAME" />
+		<property name="name" value="neighbour_card_benefits" />
+		<property name="parameters">
+			<list>
+				<value>SCIENCE</value>		<!-- benefiting card type -->
+				<value>1</value>			<!-- left neighbour's benefit coefficient -->
+				<value>1</value>			<!-- right neighbour's benefit coefficient -->
+			</list>
+		</property>
+	</bean>
+
+	<bean id="neighbour_card_endgame_benefits_victory_points_wonder_l1_r1" class="com.boardgame.sevenwonders.model.CardEffect">
+		<property name="type" value="ENDGAME" />
+		<property name="name" value="neighbour_card_benefits" />
+		<property name="parameters">
+			<list>
+				<value>WONDER</value>		<!-- benefiting card type -->
+				<value>1</value>			<!-- left neighbour's benefit coefficient -->
+				<value>1</value>			<!-- right neighbour's benefit coefficient -->
+			</list>
+		</property>
+	</bean>
+	
+	<!-- End of End-Game Effects -->
+	
 	<!-- End of Card Effects -->
 
 
