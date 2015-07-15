@@ -19,6 +19,15 @@ public class EffectMechanism {
 			List<String> resourceList) {
 		for (String resource : resourceList) {
 			player.getResources().add(resource);
+			player.getTradableResources().add(resource);
+		}
+		return player;
+	}
+	
+	protected static Player playerImportResource(Player player,
+			List<String> resourceList) {
+		for (String resource : resourceList) {
+			player.getResources().add(resource);
 		}
 		return player;
 	}
@@ -84,6 +93,9 @@ public class EffectMechanism {
 			return playerGainGold(player, goldAmount);
 		}
 		case Constants.EFFECT_PRODUCE_RESOURCE: {
+			return playerProduceResource(player, cardEffect.getParameters());
+		}
+		case Constants.EFFECT_IMPORT_RESOURCE: {
 			return playerProduceResource(player, cardEffect.getParameters());
 		}
 		case Constants.EFFECT_MILITARY_MIGHT_MODIFIER: {

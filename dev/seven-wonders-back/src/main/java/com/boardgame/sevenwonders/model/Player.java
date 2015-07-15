@@ -1,6 +1,5 @@
 package com.boardgame.sevenwonders.model;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +20,8 @@ public class Player {
 	
 	private List<String> resources;
 	
+	private List<String> tradableResources;
+	
 	private int gold;
 	
 	private int militaryMight;
@@ -28,5 +29,19 @@ public class Player {
 	private int victoryPoints;
 	
 	private Map<ScienceCategory, Integer> sciencePoints;
-
+	
+	private List<Integer> militaryTokens;
+	
+	/**
+	 * These effects will take place at the end of game.
+	 */
+	private List<CardEffect> pendingEffects; 
+	
+	private Player neighbourLeft;
+	
+	private Player neighbourRight;
+	
+	private List<Card> cardsOnBoard;
+	
+	
 }
