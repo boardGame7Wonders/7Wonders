@@ -23,8 +23,10 @@ public class Constants {
 	
 	
 	/*****Card Effects******/
-	/*Produce resource, parameter: list of String ==> ["W","S","BM"] */
+	/*Produce resource, resource are eligible for trade, parameter: list of String ==> ["W","S","BM"] */
 	public static final String EFFECT_PRODUCE_RESOURCE = "produce_resource";
+	/*Import resource, resource are not eligible for trade, parameter: list of String ==> ["W","S","BM"] */
+	public static final String EFFECT_IMPORT_RESOURCE = "import_resource";
 	/*Gain gold, parameter: int ==> gold amount to grant*/
 	public static final String EFFECT_GAIN_GOLD = "gain_gold";
 	/*Modify military might: string, int ==> operator , value */
@@ -33,4 +35,10 @@ public class Constants {
 	public static final String EFFECT_SCIENCE_MODIFIER = "science_modifier";
 	/*Gain victory points immediately:  int ==> value */
 	public static final String EFFECT_GAIN_VICTORY_POINTS = "gain_victory_points";
+	
+	
+	/**** Miscellaneous ****/
+	public static final int LEFT_NEIGHBOUR = -1;
+	public static final int RIGHT_NEIGHBOUR = 1;
+	
 }
