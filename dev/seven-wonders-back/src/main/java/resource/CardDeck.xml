@@ -9,6 +9,7 @@
 	<bean id="CardCollection" class="com.boardgame.sevenwonders.model.CardCollection">
 		<property name="cardList">
 			<list>
+			<!-- Age 1 -->
 				<ref bean="tarverne" />
 				<ref bean="comptoir_est" />
 				<ref bean="comptoir_ouest" />
@@ -41,6 +42,11 @@
 				<ref bean="atelier" />
 				<ref bean="scriptorium" />
 				
+				<!-- Age 2 -->
+				<ref bean="forum" />
+				<ref bean="caravanserail" />
+				<ref bean="vignoble" />
+				<ref bean="bazar" />
 				
 			</list>
 		</property>
