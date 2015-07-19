@@ -96,7 +96,7 @@ public class EffectMechanism {
 			return playerProduceResource(player, cardEffect.getParameters());
 		}
 		case Constants.EFFECT_IMPORT_RESOURCE: {
-			return playerProduceResource(player, cardEffect.getParameters());
+			return playerImportResource(player, cardEffect.getParameters());
 		}
 		case Constants.EFFECT_MILITARY_MIGHT_MODIFIER: {
 			String operator_s = cardEffect.getParameters().get(0);
